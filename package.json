@@ -1,0 +1,14 @@
+{
+  "name": "wetube-2021",
+  "version": "1.0.0",
+  "description": "Cloning Youtube",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ys9922@naver.com",
+  "license": "ISC",
+  "dependencies": {
+    "nanoexpress": "^2.4.13"
+  }
+}
