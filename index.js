@@ -21,8 +21,8 @@ const handleProfile = (req, res) => {
 // };
 
 app.use(cookieParser());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(nanoexpress.json());
+app.use(nanoexpress.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(helmet());
 
