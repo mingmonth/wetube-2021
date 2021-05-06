@@ -1,12 +1,10 @@
-import nanoexpress from "nanoexpress";
+import express from "express";
 import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
-import bodyParser from "body-parser";
+import { userRouter } from "./router";
 
-const app = nanoexpress();
-
-const PORT = 3000;
+const app = express();
 
 const handleHome = (req, res) => {
   return res.send({ status: "ok" });
@@ -16,17 +14,15 @@ const handleProfile = (req, res) => {
   return res.send("handle profile2");
 };
 
-// const middleware = (req, res, next) => {
-//   return res.send("not happening!!!");
-// };
-
 app.use(cookieParser());
-app.use(nanoexpress.json());
-app.use(nanoexpress.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(helmet());
 
-app.get("/", handleHome);
+app.get("", handleHome);
 app.get("/profile", handleProfile);
 
-app.listen(PORT);
+app.use("/user", userRouter);
+
+export default app;
