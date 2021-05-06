@@ -1,7 +1,13 @@
-export const home = (req, res) => res.render("home");
-export const search = (req, res) => res.render("search");
-export const videos = (req, res) => res.send("videos");
-export const uploadVideo = (req, res) => res.send("uploadVideo");
-export const videoDetail = (req, res) => res.send("videoDetail");
-export const editVideo = (req, res) => res.send("editVideo");
-export const deleteVideo = (req, res) => res.send("deleteVideo");
+export const home = (req, res) => res.render("home", { pageTitle: "Home" });
+export const search = (req, res) =>
+  res.render("search", { pageTitle: "Search" });
+export const videos = (req, res) =>
+  res.render("videos", { pageTitle: "Videos" });
+export const uploadVideo = (req, res) =>
+  res.render("uploadVideo", { pageTitle: "Upload Video" });
+export const videoDetail = (req, res) =>
+  res.render("videoDetail", { pageTitle: "Video Detail" });
+export const editVideo = (req, res) =>
+  res.render("editVideo", { pageTitle: "Edit Video" });
+export const deleteVideo = (req, res) =>
+  res.render("deleteVideo", { pageTitle: "Delete Video" });

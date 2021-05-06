@@ -1,5 +1,5 @@
 // global
-const HOME = "";
+const HOME = "/";
 const SEARCH = "/search";
 const JOIN = "/join";
 const LOGIN = "/login";
