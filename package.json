@@ -10,6 +10,8 @@
   "author": "ys9922@naver.com",
   "license": "ISC",
   "dependencies": {
+    "helmet": "^4.6.0",
+    "morgan": "^1.10.0",
     "nanoexpress": "^2.4.13"
   },
   "devDependencies": {
