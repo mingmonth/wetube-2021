@@ -1,4 +1,9 @@
 extends layouts/main.pug
 
 block content
-  p Edit Video
+  .form-container 
+    form(action=`/videos${routes.editVideo}`, method="post")
+      input(type="text", placeholder="Title", name="title")
+      input(type="text", placeholder="Description", name="description")
+      input(type="submit", value="Edit Video")
+    a.form-container__link(href=`/videos${routes.deleteVideo}`) Delete Video
