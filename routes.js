@@ -8,8 +8,8 @@ const LOGOUT = "/logout";
 // users
 const USERS = "/users";
 const USER_DETAIL = "/:id";
-const EDIT_USER = "/:id/edit";
-const CHANGE_PASSWORD = "/:id/change-password";
+const EDIT_USER = "/edit-profile";
+const CHANGE_PASSWORD = "/change-password";
 
 // videos
 const VIDEOS = "/videos";
