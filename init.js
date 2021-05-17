@@ -1,6 +1,7 @@
 import "./db";
 import app from "./app-express";
+import dotenv from "dotenv";
 
-const PORT = 3000;
+dotenv.config();
 
-app.listen(PORT);
+app.listen(process.env.PORT);
