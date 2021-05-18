@@ -4,14 +4,18 @@
   "description": "Cloning Youtube",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node init.js -- delay 2"
+    "dev:server": "nodemon --exec babel-node init.js -- delay 2",
+    "dev:assets": "cross-env WEBPACK_ENV=development webpack",
+    "build:assets": "cross-env WEBPACK_ENV=production webpack"
   },
   "author": "ys9922@naver.com",
   "license": "ISC",
   "dependencies": {
+    "autoprefixer": "^10.2.5",
+    "babel-loader": "^8.2.2",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
+    "css-loader": "^1.0.1",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
@@ -19,13 +23,21 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
     "nanoexpress": "^2.4.13",
-    "pug": "^3.0.2"
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
+    "pug": "^3.0.2",
+    "sass-loader": "^7.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.16",
     "@babel/core": "^7.14.0",
     "@babel/node": "^7.13.13",
     "@babel/preset-env": "^7.14.1",
-    "nodemon": "^2.0.7"
+    "cross-env": "^7.0.3",
+    "mini-css-extract-plugin": "^1.6.0",
+    "nodemon": "^2.0.7",
+    "postcss": "^8.2.15",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0"
   }
 }
