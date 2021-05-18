@@ -7,6 +7,7 @@ import routes from "../routes";
 // };
 
 export const home = async (req, res) => {
+  let videos = [];
   try {
     const videos = await Video.find({});
     console.log(videos);
@@ -18,12 +19,22 @@ export const home = async (req, res) => {
   }
 };
 
-export const search = (req, res) => {
+export const search = async (req, res) => {
   // const searchingBy = req.query.term;
   const {
     query: { term: searchingBy },
   } = req;
-  return res.render("search", { pageTitle: "Search", searchingBy, videos });
+  let videos = [];
+  try {
+    videos = await Video.find({
+      title: { $regex: searchingBy, $options: "i" },
+    });
+  } catch (error) {
+    console.log(err);
+  }
+
+  res.render("search", { pageTitle: "Search", searchingBy, videos });
+  // res.render("home", { pageTitle: "Home", videos });
 };
 
 // export const videos = (req, res) =>
