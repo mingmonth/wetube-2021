@@ -1,4 +1,10 @@
 extends layouts/main.pug
 
 block content
-  p Video Detail
+  .video__player 
+    video(src=`/${video.fileUrl}`, controls=true)
+  .vidoe_info  
+    a(href=routes.editVideo) Edit video
+    h5.video__title=video.title
+    span.video__views=video.views
+    p.video__description=video.description 

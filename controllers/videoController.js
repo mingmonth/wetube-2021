@@ -52,5 +52,13 @@ export const editVideo = (req, res) =>
   res.render("editVideo", { pageTitle: "Edit Video" });
 export const deleteVideo = (req, res) =>
   res.render("deleteVideo", { pageTitle: "Delete Video" });
-export const videoDetail = (req, res) =>
-  res.render("videoDetail", { pageTitle: "Video Detail" });
+export const videoDetail = async (req, res) => {
+  // console.log(req.params);
+  const {
+    params: { id },
+  } = req;
+  // find...
+  const video = await Video.findById(id);
+  // console.log(video);
+  res.render("videoDetail", { pageTitle: "Video Detail", video });
+};
