@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "dev:server": "nodemon --exec babel-node init.js -- delay 2",
-    "dev:assets": "cross-env WEBPACK_ENV=development webpack",
+    "dev:assets": "cross-env WEBPACK_ENV=development webpack -w",
     "build:assets": "cross-env WEBPACK_ENV=production webpack"
   },
   "author": "ys9922@naver.com",
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "autoprefixer": "^10.2.5",
     "babel-loader": "^8.2.2",
     "body-parser": "^1.19.0",
